@@ -8,17 +8,58 @@
 }
 
 body {
-    height: 100vh;
+    height: 589px;
     width: 100%;
-    background: linear-gradient(to bottom, #d6dd9f 0%, #bce033 100%);
+    background: linear-gradient(to bottom, #d6b26e 0%, #d69a2b 100%);
     text-align: center;
 }
 
 .wrapper {
     margin: 120px auto;
     max-width: 400px;
-    background: #3661ee;
-    border-radius: 5px;
+    background: #0c2d99;
+    border-radius: 5px solid;
     padding: 5px;
 }
 
+.wrapper header {
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.wrapper .inputField {
+    display: flex;
+    height: 45px;
+    width: 100%;
+    margin: 20px;
+}
+
+.inputField input {
+    width: 100%;
+    height: 100%;
+    border: 1px solid;
+    font-size: 17px;
+    border-radius: 60px;
+    padding-left: 15px;
+    -webkit-border-radius: 60px;
+    -moz-border-radius: 60px;
+    -ms-border-radius: 60px;
+    -o-border-radius: 60px;
+}
+
+.inputField button {
+    width: 60px;
+    height: 100%;
+    background: #fff;
+    color: #fff;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 5px solid #000;
+    margin-left: 5px;
+    font-size: 25px;
+}
+
+/*
+https://youtu.be/ykuD2QOZkhc?t=438
+*/
