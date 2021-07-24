@@ -2,26 +2,30 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="Chrome">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TO DO List</title>
+    <title>ToDo List</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
-    
+    <script src="https://kit.fontawesome.com/c07ff8ccc3.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <h1>To do list</h1>
-    <br id="formulario" action>
-    <label for="inputItem">Insira novas tarefas na lista: </label>
-    <br>
-    <input type="text" placeholder="Nova tarefa.. " id="inputItem">
-    <button id="bttn">Inserir</button>
-    <br>
-    <br>
-    <select size="8" id="list">
-        <option id="optDefault" >Novas taredas</option>
-    </select>
-
+   <div class="wrapper">
+       <header>ToDo List</header>
+       <div class="inputItem">
+           <input type="text" placeholder="Insira nova tarefa na lista...">
+           <button><i class="fas fa-plus-circle"></i></button>
+       </div>
+       <ul class="todoList">
+           <li>Add new item <spam><i class="fas fa-trash-alt"></i></spam></li>
+           <li>Add new item <spam><i class="fas fa-trash-alt"></i></spam></li>
+           <li>Add new item <spam><i class="fas fa-trash-alt"></i></spam></li>
+           <li>Add new item <spam><i class="fas fa-trash-alt"></i></spam></li>
+       </ul>
+       <div class="footer">
+           <span>Restam X tarefas pendentes</span>
+           <button><i class="fas fa-recycle"></i></button>
+       </div>
+   </div> 
 </body>
 </html>
 

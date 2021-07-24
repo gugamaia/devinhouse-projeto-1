@@ -25,3 +25,4 @@ function addItemNaLista() {
         alert("Favor inserir um item.");
     }
 }
+
