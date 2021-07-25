@@ -1,72 +1,135 @@
 @import url('https://fonts.googleapis.com/css2?family=Arimo:ital@1&display=swap');
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
     font-family: 'Arimo', Sans-serif, Arial;
+    margin: 0px;
+    padding: 0px;
 }
 
 body {
+    font-family: 'Arimo', Sans-serif, Arial;
+    background: #fff;
     height: 589px;
-    width: 100%;
-    background: linear-gradient(to bottom, #d6b26e 0%, #d69a2b 100%);
+    background: linear-gradient(to bottom,  #d69a2b 0%, #d6b26e 100%);
+}
+  
+header {
     text-align: center;
+    padding: 50px;
 }
 
-h1 {
-    background: #0c2d99;
+main {
+    max-width: 700px;
+    margin: 0 auto;
+}
+  
+main form {
+    text-align: center;
+}
+  
+main form label:first-child {
+    display: none;
+}
+  
+main form #inputTask {
+    height: 22px;
+    border: 2px solid;
+    padding: 10px;
+    width: 300px;
+    border-radius: 7px;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    -ms-border-radius: 7px;
+    -o-border-radius: 7px;
+}
+  
+main form #inputTask.inativo {
+    border: 1px solid;
+    border-color: #ad0c0c;
+}
+  
+main form .bttAdd,.restList {
+    height: 40px;
+    width: 150px;
+    padding: 10px;
+    background: #3e52c0;
+    text-transform: uppercase;
     color: #fff;
+    cursor: pointer;
+    border-radius: 7px  ;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    -ms-border-radius: 7px;
+    -o-border-radius: 7px;
+}
+  
+.restList {
+    background:#ad0c0c;
+}
+  
+main .msgErro {
+    margin: 20px;    
+}
+  
+main .msgErro span {
+    color: #bb1414;
+    font-weight: bold;
+    background: #fff;
+}
+  
+main .newTasks {
+    width: auto;
+    margin: 20px auto 10px auto;
+}
+  
+main .newTasks div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    background: #fff;
+    padding: 15px;
+    margin-bottom: 5px;
+    -webkit-box-shadow: 2px 3px 4px 2px #a0a0a0;
+    box-shadow: 2px 3px 4px 2px #a0a0a0;
+    border-radius: 14px;
+}
+  
+main .newTasks div:hover {
+    background: #fff;
+
+}
+  
+main .newTasks div input[type='checkbox']:checked + li {
+    text-decoration: line-through;
+}
+  
+main .newTasks div li {
+    max-width: 400px;
+    text-align: center;
+}
+  
+main .newTasks .novoItem {
+    cursor: pointer;
+    height: 20px;
+}
+  
+main .newTasks .removeItem {
+    height: 25px;
+    padding: 2px 6px;
+    cursor: pointer;
+    border-radius: 14px;
+    background-color: #bb1414;
+    color: #fff;
+    -webkit-border-radius: 14px;
+    -moz-border-radius: 14px;
+    -ms-border-radius: 14px;
+    -o-border-radius: 14px;
 }
 
 ul {
-    color: #fff;
-}
-
-.wrapper {
-    margin: 120px auto;
-    max-width: 400px;
-    background: #0c2d99;
-    border-radius: 5px solid;
-    padding: 5px;
-}
-
-.wrapper header {
-    font-size: 30px;
-    font-weight: 700;
-    color: #fff;
-}
-
-.wrapper .inputField {
-    display: flex;
-    height: 45px;
-    width: 100%;
-    margin: 20px;
-}
-
-.inputField input {
-    width: 100%;
-    height: 100%;
-    border: 1px solid;
-    font-size: 17px;
-    border-radius: 60px;
-    padding-left: 15px;
-    -webkit-border-radius: 60px;
-    -moz-border-radius: 60px;
-    -ms-border-radius: 60px;
-    -o-border-radius: 60px;
-}
-
-.inputField button {
-    width: 60px;
-    height: 100%;
-    background: #fff;
-    color: #fff;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    border-radius: 5px solid #000;
-    margin-left: 5px;
-    font-size: 25px;
+    list-style: none;
 }
 

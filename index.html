@@ -1,67 +1,43 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="Chrome">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ToDo List</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
-    <script src="https://kit.fontawesome.com/c07ff8ccc3.js" crossorigin="anonymous"></script>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="Chrome">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+        <title>ToDo List - DevinHouse</title>
+    
+        <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" href="style.css">
+        
+        <script defer src="js/script.js"></script>
+        <script defer src="https://kit.fontawesome.com/c07ff8ccc3.js" crossorigin="anonymous"></script>
+    
+        </head>
+
 <body>
-   <h1>ToDo List</h1>
-   <div class="wrapper">
-       <br class="formulario">
-           <label for="inputItem">Nova tarefa:</label><br>
-           <input type="text" placeholder="Insira nova tarefa na lista...">
-           <button id="bttn"><i class="fas fa-plus-circle"></i></button>
-       </div>
 
-       <select size="8" id="list">
-        <option id="optDefault" >Novas taredas</option>
-    </select>
+    <header>
+        <h1>ToDo List</h1>
+    </header>
 
-   <!-- Ver se isso irá ficar no final
-    <ul class="todoList">
-        <ol>Add new item <spam><i class="fas fa-minus-square"></i></spam></ol>
-        <ol>Add new item <spam><i class="fas fa-minus-square"></i></spam></ol>
-        <ol>Add new item <spam><i class="fas fa-minus-square"></i></spam></ol>
-        <ol>Add new item <spam><i class="fas fa-minus-square"></i></spam></ol>
-    </ul>-->
+  
+  <main>
+    <form id="form">
+      <label for="inputTask">Adicionar uma nova tarefa</label>
+      <input type="text"  id="inputTask" placeholder="Nova tarefa..." autocomplete="off">
+      <button type="submit" class="bttAdd">Adicionar</button>
+      <button type="submit" class="restList">Limpar</button>
+      <p class="msgErro"></p>
+    </form>
 
-       <div class="footer">
-           <span>Restam X tarefas pendentes</span>
-           <button id="trash"><i class="fas fa-trash-alt"></i></button>
-       </div>
-   </div> 
+    <section >
+      <ul class="newTasks">
+      
+      </ul>
+    </section>
+  </main>
+  
+
 </body>
 </html>
-
-
-<!--
-    INICIO DA VERSÂO ERA ASSIM
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
-    <title>Lista de Tarefas</title>
-</head>
-
-    <body>
-    <h1>To do List</h1>
-
-    <br id="formulario" action="">
-        <label for="inputItem">Adicione nova tarefa para lista</label></br>
-        <input type="text" id="inputItem" placeholder="Nova Tarefa..">
-        <button id="bttn">Inserir</button>
-    </form>
-    
-    </br>
-    </br>
-    
-    <select size="8" id="list">
-        <option id="optDefault" >Novas taredas</option>
-    </select>-->
