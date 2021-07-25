@@ -6,26 +6,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ToDo List</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
     <script src="https://kit.fontawesome.com/c07ff8ccc3.js" crossorigin="anonymous"></script>
 </head>
 <body>
+   <h1>ToDo List</h1>
    <div class="wrapper">
-       <header>ToDo List</header>
-       <div class="inputItem">
+       <br class="formulario">
+           <label for="inputItem">Nova tarefa:</label><br>
            <input type="text" placeholder="Insira nova tarefa na lista...">
-           <button><i class="fas fa-plus-circle"></i></button>
+           <button id="bttn"><i class="fas fa-plus-circle"></i></button>
        </div>
-       <ul class="todoList">
-           <li>Add new item <spam><i class="fas fa-trash-alt"></i></spam></li>
-           <li>Add new item <spam><i class="fas fa-trash-alt"></i></spam></li>
-           <li>Add new item <spam><i class="fas fa-trash-alt"></i></spam></li>
-           <li>Add new item <spam><i class="fas fa-trash-alt"></i></spam></li>
-       </ul>
+
+       <select size="8" id="list">
+        <option id="optDefault" >Novas taredas</option>
+    </select>
+
+   <!-- Ver se isso irá ficar no final
+    <ul class="todoList">
+        <ol>Add new item <spam><i class="fas fa-minus-square"></i></spam></ol>
+        <ol>Add new item <spam><i class="fas fa-minus-square"></i></spam></ol>
+        <ol>Add new item <spam><i class="fas fa-minus-square"></i></spam></ol>
+        <ol>Add new item <spam><i class="fas fa-minus-square"></i></spam></ol>
+    </ul>-->
+
        <div class="footer">
            <span>Restam X tarefas pendentes</span>
-           <button><i class="fas fa-recycle"></i></button>
+           <button id="trash"><i class="fas fa-trash-alt"></i></button>
        </div>
    </div> 
 </body>
 </html>
 
+
+<!--
+    INICIO DA VERSÂO ERA ASSIM
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <title>Lista de Tarefas</title>
+</head>
+
+    <body>
+    <h1>To do List</h1>
+
+    <br id="formulario" action="">
+        <label for="inputItem">Adicione nova tarefa para lista</label></br>
+        <input type="text" id="inputItem" placeholder="Nova Tarefa..">
+        <button id="bttn">Inserir</button>
+    </form>
+    
+    </br>
+    </br>
+    
+    <select size="8" id="list">
+        <option id="optDefault" >Novas taredas</option>
+    </select>-->

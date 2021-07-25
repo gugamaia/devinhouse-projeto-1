@@ -9,15 +9,15 @@ form.addEventListener("submit", function(event) {
 
 function addItemNaLista() {
     var txtItem = inputItem.value;
-    var optDefault = document.getElementById("optDefault");
+    var todoList = document.getElementById("todoList");
     if (txtItem) {
         //TODO: adicionar item na lista
         var novoItem = document.createElement("option");
         novoItem.innerText = txtItem;
         novoItem.value = txtItem;
         lista.appendChild(novoItem);
-        if (optDefault) {
-            lista.remove(optDefault);
+        if (todoList) {
+            lista.remove(todoList);
         }
         inputItem.value = "";
         inputItem.focus();
@@ -25,4 +25,5 @@ function addItemNaLista() {
         alert("Favor inserir um item.");
     }
 }
+
 

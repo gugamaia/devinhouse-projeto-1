@@ -14,6 +14,15 @@ body {
     text-align: center;
 }
 
+h1 {
+    background: #0c2d99;
+    color: #fff;
+}
+
+ul {
+    color: #fff;
+}
+
 .wrapper {
     margin: 120px auto;
     max-width: 400px;
@@ -25,6 +34,7 @@ body {
 .wrapper header {
     font-size: 30px;
     font-weight: 700;
+    color: #fff;
 }
 
 .wrapper .inputField {
@@ -60,6 +70,3 @@ body {
     font-size: 25px;
 }
 
-/*
-https://youtu.be/ykuD2QOZkhc?t=438
-*/
