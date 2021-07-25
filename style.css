@@ -6,16 +6,16 @@
     padding: 0px;
 }
 
-body {
-    font-family: 'Arimo', Sans-serif, Arial;
-    background: #fff;
-    height: 589px;
-    background: linear-gradient(to bottom,  #d69a2b 0%, #d6b26e 100%);
-}
-  
 header {
     text-align: center;
     padding: 50px;
+}
+
+body {
+    font-family: 'Arimo', Sans-serif, Arial;
+    background: #fff;
+    height: 600px;
+    background: linear-gradient(to bottom,  #d69a2b 0%, #d6b26e 100%);
 }
 
 main {
@@ -65,16 +65,6 @@ main form .bttAdd,.restList {
   
 .restList {
     background:#ad0c0c;
-}
-  
-main .msgErro {
-    margin: 20px;    
-}
-  
-main .msgErro span {
-    color: #bb1414;
-    font-weight: bold;
-    background: #fff;
 }
   
 main .newTasks {

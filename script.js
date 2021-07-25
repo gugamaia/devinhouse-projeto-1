@@ -1,7 +1,7 @@
 const form = document.querySelector("#form");
 const inputTask = document.querySelector("#inputTask");
 const newTasks = document.querySelector(".newTasks");
-const msgErro = document.querySelector(".msgErro");
+const blnkTask = document.querySelector(".blnkTask");
 let itensnewTasks = [];
 
 // Aciona a função quando o usuário dar submit, prevendo o evento padrão do form
@@ -16,34 +16,26 @@ function adicionarNanewTasks(itemTarefa, status, indice) {
   let itemAdicionado = document.createElement('div')
   itemAdicionado.classList.add('containerItem')
   
+    if (itemTarefa) {
+      blnkTask.innerText = null;
+      inputTask.classList.remove("inativo");
 
+      // criará os elementos a seguir dentro da div criado, pela variavel itemAdicionado
+      itemAdicionado.innerHTML = `
+          <input type="checkbox" ${status} data-indice=${indice} class="novoItem"> 
+          <li> ${itemTarefa} </li>
+          <input type="button" data-indice=${indice} value="X" onClick="removeItens(event)" class="removeItem">
+          `
+      newTasks.appendChild(itemAdicionado); 
+      itensnewTasks.push(itemTarefa); 
+      salveLocalStorage();
 
-  // se verdadeiro, rodará o código a seguir
-  if (itemTarefa) {
-    msgErro.innerText = null;
-    inputTask.classList.remove("inativo");
-
-    // criará os elementos a seguir dentro da div criado, pela variavel itemAdicionado
-    itemAdicionado.innerHTML = `
-        <input type="checkbox" ${status} data-indice=${indice} class="novoItem"> 
-        <li> ${itemTarefa} </li>
-        <input type="button" data-indice=${indice} value="X" onClick="removeItens(event)" class="removeItem">
-        `
-
-
-    newTasks.appendChild(itemAdicionado); // adicionará os itens abaixo da ul com a classe newTasks
-
-    itensnewTasks.push(itemTarefa); // adicionará os novos elementos ao final da array
-
-    salveLocalStorage(); // salva os valores digitados automaticamente no localStorage
-
-    inputTask.value = "";
-    inputTask.focus();
-  } // se for falso, aparecerá uma mensagem de alerta e bordas vermelhas no input
-  else {
-    inputTask.classList.add("inativo");
-    msgErro.innerHTML = `<span>Atenção!</span>    Você deixou o espaço em branco, digite uma nova tarefa.`;
-  }
+      inputTask.value = "";
+      inputTask.focus();
+    } else {
+            inputTask.classList.add("inativo");
+            alert("ERRROOOUUU!!!" + "\n" + "Não desanime." + "\n" + "Basta preencher o campo com uma tarefa!");
+          }
 }
 
 
@@ -97,3 +89,4 @@ function restList() {
       }
   }
 }
+
