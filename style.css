@@ -48,8 +48,8 @@ form .bttAdd {
     background: #3e52c0;
     color: #fff;
     height: 40px;
-    width: 150px;
-    border-radius: 7px;
+    width: 100px;
+    border-radius: 40px;
     padding: 10px;
     cursor: pointer;
 }

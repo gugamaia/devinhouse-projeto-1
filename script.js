@@ -63,3 +63,5 @@ function removeItens(event) {
   /*alert("Atividade excluída com sucesso!");*/
   console.log("Atividade excluída");
 }
+
+
