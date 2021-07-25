@@ -17,9 +17,9 @@ header h1{
 
 body {
     font-family: 'Arimo', Sans-serif, Arial;
-    background: #fff;
-    height: 600px;
-    background: linear-gradient(to bottom,  #d69a2b 0%, #d6b26e 100%);
+    background: #d69a2b;
+    height: 100%;
+    weight: flex;
 }
 
 main {
@@ -34,14 +34,9 @@ form label:first-child {
   
 form #inputTask {
     height: 22px;
-    border: 2px solid;
     padding: 10px;
-    width: 300px;
-    border-radius: 7px;
-    -webkit-border-radius: 7px;
-    -moz-border-radius: 7px;
-    -ms-border-radius: 7px;
-    -o-border-radius: 7px;
+    width: 200px;
+    border-radius: 14px;
 }
   
 form .bttAdd {
@@ -60,14 +55,16 @@ main .newTasks {
 }
   
 main .newTasks div {
-    display: -webkit-box;
-    display: -ms-flexbox;
+    background: #fff;
     display: flex;
     justify-content: space-between;
-    background: #fff;
     padding: 15px;
     margin-bottom: 5px;
     border-radius: 14px;
+    -webkit-border-radius: 14px;
+    -moz-border-radius: 14px;
+    -ms-border-radius: 14px;
+    -o-border-radius: 14px;
 }
   
 main .newTasks div input[type='checkbox']:checked + li {
@@ -75,7 +72,7 @@ main .newTasks div input[type='checkbox']:checked + li {
 }
   
 main .newTasks div li {
-    max-width: 400px;
+    max-width: 120px;
     text-align: center;
 }
   
