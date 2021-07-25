@@ -2,91 +2,75 @@ const form = document.querySelector("#form");
 const inputTask = document.querySelector("#inputTask");
 const newTasks = document.querySelector(".newTasks");
 const blnkTask = document.querySelector(".blnkTask");
+const removeItem = document.querySelector(".removeItem");
 let itensnewTasks = [];
 
-// Aciona a função quando o usuário dar submit, prevendo o evento padrão do form
-function adicionarItem(event) {
+function addNewItem(event) {
   event.preventDefault();
-  adicionarNanewTasks(inputTask.value);
+  addNewTasks(inputTask.value);
 }
-form.addEventListener("submit", adicionarItem);
+form.addEventListener("submit", addNewItem);
 
-// Pegará o valor da variavel Input Tarefa e acionará esta função
-function adicionarNanewTasks(itemTarefa, status, indice) {
-  let itemAdicionado = document.createElement('div')
-  itemAdicionado.classList.add('containerItem')
+function addNewTasks(itemTask, status, indice) {
+  let itemAdd = document.createElement('div')
+  itemAdd.classList.add('containerItem')
   
-    if (itemTarefa) {
+    if (itemTask) {
       blnkTask.innerText = null;
       inputTask.classList.remove("inativo");
 
-      // criará os elementos a seguir dentro da div criado, pela variavel itemAdicionado
-      itemAdicionado.innerHTML = `
+      itemAdd.innerHTML = `
           <input type="checkbox" ${status} data-indice=${indice} class="novoItem"> 
-          <li> ${itemTarefa} </li>
+          <li> ${itemTask} </li>
           <input type="button" data-indice=${indice} value="X" onClick="removeItens(event)" class="removeItem">
           `
-      newTasks.appendChild(itemAdicionado); 
-      itensnewTasks.push(itemTarefa); 
-      salveLocalStorage();
+      newTasks.appendChild(itemAdd); 
+      itensnewTasks.push(itemTask); 
+      localStorageSave();
 
       inputTask.value = "";
       inputTask.focus();
     } else {
             inputTask.classList.add("inativo");
             alert("ERRROOOUUU!!!" + "\n" + "Não desanime." + "\n" + "Basta preencher o campo com uma tarefa!");
+            console.log("Tentativa de inserir campo em branco");
           }
 }
 
+function localStorageSave() {
+  localStorage.setItem("newTaskToDo", JSON.stringify(itensnewTasks));
+}
 
+function localStorageLoadTask() {
+  let localStorageNewTask = localStorage.getItem("newTaskToDo");
 
-// quando clicar no input button value X, removerá a div criada
+  if (localStorageNewTask) {
+    localStorageNewTask = JSON.parse(localStorageNewTask);
+
+    for (let i = 0; i < localStorageNewTask.length; i++) {
+      addNewTasks(localStorageNewTask[i]);
+    }
+  }
+}
+localStorageLoadTask();
+
+/**
+ * function resetList() {
+  let reset = confirm("Confirma exlusão da lista atual??")
+  if (reset) {
+      while () {
+          node.removeChild()
+      }
+  }
+}
+
+*/
+
 function removeItens(event) {
   let item = document.querySelector(".containerItem");
   item.parentNode.removeChild(event.target.parentNode);
 
   localStorage.removeItem('newTaskToDo', item)
-
-  // localStorage.clear()
-
-  // localStorage.clear()
-
-  // console.log(event.target.previousElementSibling.innerText)
-
-  // itensnewTasks.remove(event.target.previousElementSibling.innerText)
-
+  alert("Atividade excluída com sucesso!");
+  console.log("Atividade excluída");
 }
-
-// salvando os itens na key newTaskToDo
-function salveLocalStorage() {
-  localStorage.setItem("newTaskToDo", JSON.stringify(itensnewTasks));
-}
-
-// carregará a página com os itens salvos no Local Storage com a key newTaskToDo
-function carregarnewTasksLocalStorage() {
-  let newTasksLocalStorage = localStorage.getItem("newTaskToDo");
-
-  if (newTasksLocalStorage) {
-    newTasksLocalStorage = JSON.parse(newTasksLocalStorage);
-
-    for (let i = 0; i < newTasksLocalStorage.length; i++) {
-      adicionarNanewTasks(newTasksLocalStorage[i]);
-    }
-  }
-}
-carregarnewTasksLocalStorage();
-
-function restList() {
-  let excluir = confirm("Limpar newTasks atual?")
-
-  if (excluir) {
-      // apaga a newTasks do local storage, newTasksTarefas = []
-      localStorage.setItem("newTasksTarefas", JSON.stringify([])) 
-      // apagar a newTasks da página
-      let node = document.getElementById("divnewTasks")
-      while (node.firstChild) {
-          node.removeChild(node.firstChild)
-      }
-  }
-}
-

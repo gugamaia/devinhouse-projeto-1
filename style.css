@@ -11,6 +11,10 @@ header {
     padding: 50px;
 }
 
+header h1{
+    background-color: #2776d1;
+}
+
 body {
     font-family: 'Arimo', Sans-serif, Arial;
     background: #fff;
@@ -21,17 +25,14 @@ body {
 main {
     max-width: 700px;
     margin: 0 auto;
-}
-  
-main form {
     text-align: center;
 }
   
-main form label:first-child {
+form label:first-child {
     display: none;
 }
   
-main form #inputTask {
+form #inputTask {
     height: 22px;
     border: 2px solid;
     padding: 10px;
@@ -43,29 +44,25 @@ main form #inputTask {
     -o-border-radius: 7px;
 }
   
-main form #inputTask.inativo {
-    border: 1px solid;
-    border-color: #ad0c0c;
-}
-  
-main form .bttAdd,.restList {
+form .bttAdd {
+    background: #3e52c0;
+    color: #fff;
     height: 40px;
     width: 150px;
+    border-radius: 7px;
     padding: 10px;
-    background: #3e52c0;
-    text-transform: uppercase;
-    color: #fff;
     cursor: pointer;
-    border-radius: 7px  ;
-    -webkit-border-radius: 7px;
-    -moz-border-radius: 7px;
-    -ms-border-radius: 7px;
-    -o-border-radius: 7px;
 }
   
-.restList {
+/*.resetList {
     background:#ad0c0c;
-}
+    color: #fff;
+    height: 40px;
+    width: 150px;
+    border-radius: 7px;
+    padding: 10px;
+    cursor: pointer;
+}*/
   
 main .newTasks {
     width: auto;
@@ -76,20 +73,11 @@ main .newTasks div {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
     justify-content: space-between;
     background: #fff;
     padding: 15px;
     margin-bottom: 5px;
-    -webkit-box-shadow: 2px 3px 4px 2px #a0a0a0;
-    box-shadow: 2px 3px 4px 2px #a0a0a0;
     border-radius: 14px;
-}
-  
-main .newTasks div:hover {
-    background: #fff;
-
 }
   
 main .newTasks div input[type='checkbox']:checked + li {
@@ -107,16 +95,12 @@ main .newTasks .novoItem {
 }
   
 main .newTasks .removeItem {
+    background-color: #bb1414;
+    color: #fff;
     height: 25px;
     padding: 2px 6px;
     cursor: pointer;
     border-radius: 14px;
-    background-color: #bb1414;
-    color: #fff;
-    -webkit-border-radius: 14px;
-    -moz-border-radius: 14px;
-    -ms-border-radius: 14px;
-    -o-border-radius: 14px;
 }
 
 ul {
