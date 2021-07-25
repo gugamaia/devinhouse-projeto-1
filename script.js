@@ -4,6 +4,7 @@ const newTasks = document.querySelector(".newTasks");
 const blnkTask = document.querySelector(".blnkTask");
 const removeItem = document.querySelector(".removeItem");
 let itensnewTasks = [];
+let tasksRemoved = [];
 
 function addNewItem(event) {
   event.preventDefault();
@@ -20,7 +21,7 @@ function addNewTasks(itemTask, status, indice) {
       inputTask.classList.remove("inativo");
 
       itemAdd.innerHTML = `
-          <input type="checkbox" ${status} data-indice=${indice} class="novoItem"> 
+          <input type="checkbox" ${status} data-indice=${indice} class="newItem"> 
           <li> ${itemTask} </li>
           <input type="button" data-indice=${indice} value="X" onClick="removeItens(event)" class="removeItem">
           `
@@ -54,23 +55,11 @@ function localStorageLoadTask() {
 }
 localStorageLoadTask();
 
-/**
- * function resetList() {
-  let reset = confirm("Confirma exlusão da lista atual??")
-  if (reset) {
-      while () {
-          node.removeChild()
-      }
-  }
-}
-
-*/
-
 function removeItens(event) {
   let item = document.querySelector(".containerItem");
   item.parentNode.removeChild(event.target.parentNode);
 
   localStorage.removeItem('newTaskToDo', item)
-  alert("Atividade excluída com sucesso!");
+  /*alert("Atividade excluída com sucesso!");*/
   console.log("Atividade excluída");
 }

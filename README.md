@@ -23,3 +23,5 @@
 
 # A lista deve ser salva no "localStorage" do navegador (incluindo quais itens já foram realizados), e deve ser carregada sempre que a página for reaberta.
 
+# Versão final.
+

@@ -54,16 +54,6 @@ form .bttAdd {
     cursor: pointer;
 }
   
-/*.resetList {
-    background:#ad0c0c;
-    color: #fff;
-    height: 40px;
-    width: 150px;
-    border-radius: 7px;
-    padding: 10px;
-    cursor: pointer;
-}*/
-  
 main .newTasks {
     width: auto;
     margin: 20px auto 10px auto;
@@ -89,7 +79,7 @@ main .newTasks div li {
     text-align: center;
 }
   
-main .newTasks .novoItem {
+main .newTasks {
     cursor: pointer;
     height: 20px;
 }
@@ -107,3 +97,7 @@ ul {
     list-style: none;
 }
 
+p{
+    text-align: center;
+    color: #3e52c0;
+}
