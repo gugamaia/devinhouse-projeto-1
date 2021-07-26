@@ -19,7 +19,7 @@ body {
     font-family: 'Arimo', Sans-serif, Arial;
     background: #d69a2b;
     height: 100%;
-    weight: flex;
+    width: 100%;
 }
 
 main {
@@ -47,10 +47,10 @@ form .bttAdd {
     border-radius: 40px;
     padding: 10px;
     cursor: pointer;
+    text-align: center;
 }
   
 main .newTasks {
-    width: auto;
     margin: 20px auto 10px auto;
 }
   
@@ -61,17 +61,13 @@ main .newTasks div {
     padding: 15px;
     margin-bottom: 5px;
     border-radius: 14px;
-    -webkit-border-radius: 14px;
-    -moz-border-radius: 14px;
-    -ms-border-radius: 14px;
-    -o-border-radius: 14px;
 }
   
-main .newTasks div input[type='checkbox']:checked + li {
+main .newTasks div input[type='checkbox']:checked +ol {
     text-decoration: line-through;
 }
   
-main .newTasks div li {
+main .newTasks div ol {
     max-width: 120px;
     text-align: center;
 }
@@ -90,7 +86,4 @@ main .newTasks .removeItem {
     border-radius: 14px;
 }
 
-ul {
-    list-style: none;
-}
 

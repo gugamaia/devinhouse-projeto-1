@@ -4,13 +4,32 @@ const newTasks = document.querySelector(".newTasks");
 const blnkTask = document.querySelector(".blnkTask");
 const removeItem = document.querySelector(".removeItem");
 let itensnewTasks = [];
-let tasksRemoved = [];
+
+form.addEventListener("submit", addNewItem);
 
 function addNewItem(event) {
   event.preventDefault();
   addNewTasks(inputTask.value);
 }
-form.addEventListener("submit", addNewItem);
+
+function localStorageSave() {
+  localStorage.setItem("newTaskToDo", JSON.stringify(itensnewTasks));
+  console.log("Nova tarefa add no LocalStorage");
+}
+
+function localStorageLoadTask() {
+  let localStorageNewTask = localStorage.getItem("newTaskToDo");
+
+  if (localStorageNewTask) {
+    localStorageNewTask = JSON.parse(localStorageNewTask);
+
+    for (let i = 0; i < localStorageNewTask.length; i++) {
+      addNewTasks(localStorageNewTask[i]);      
+    }
+    
+  }
+}
+localStorageLoadTask();
 
 function addNewTasks(itemTask, status, indice) {
   let itemAdd = document.createElement('div')
@@ -20,11 +39,10 @@ function addNewTasks(itemTask, status, indice) {
       blnkTask.innerText = null;
       inputTask.classList.remove("inativo");
 
-      itemAdd.innerHTML = `
-          <input type="checkbox" ${status} data-indice=${indice} class="newItem"> 
-          <li> ${itemTask} </li>
-          <input type="button" data-indice=${indice} value="X" onClick="removeItens(event)" class="removeItem">
-          `
+      itemAdd.innerHTML = 
+        ` <input type="checkbox" ${status}> 
+          <ol> ${itemTask} </ol>
+          <input type="button" value="X" onClick="removeItens(event)" class="removeItem">`
       newTasks.appendChild(itemAdd); 
       itensnewTasks.push(itemTask); 
       localStorageSave();
@@ -37,23 +55,6 @@ function addNewTasks(itemTask, status, indice) {
             console.log("Tentativa de inserir campo em branco");
           }
 }
-
-function localStorageSave() {
-  localStorage.setItem("newTaskToDo", JSON.stringify(itensnewTasks));
-}
-
-function localStorageLoadTask() {
-  let localStorageNewTask = localStorage.getItem("newTaskToDo");
-
-  if (localStorageNewTask) {
-    localStorageNewTask = JSON.parse(localStorageNewTask);
-
-    for (let i = 0; i < localStorageNewTask.length; i++) {
-      addNewTasks(localStorageNewTask[i]);
-    }
-  }
-}
-localStorageLoadTask();
 
 function removeItens(event) {
   let item = document.querySelector(".containerItem");
