@@ -12,6 +12,15 @@ function addNewItem(event) {
   addNewTasks(inputTask.value);
 }
 
+function removeItens(event) {
+  let item = document.querySelector(".containerItem");
+  item.parentNode.removeChild(event.target.parentNode);
+
+  localStorage.removeItem('newTaskToDo', item)
+  /*alert("Atividade excluída com sucesso!");*/
+  console.log("Atividade excluída");
+}
+
 function localStorageSave() {
   localStorage.setItem("newTaskToDo", JSON.stringify(itensnewTasks));
   console.log("Nova tarefa add no LocalStorage");
@@ -54,16 +63,6 @@ function addNewTasks(itemTask, status) {
             alert("ERRROOOUUU!!!" + "\n" + "Não desanime." + "\n" + "Basta preencher o campo com uma tarefa!");
             console.log("Tentativa de inserir campo em branco");
           }
-}
-
-
-function removeItens(event) {
-  let item = document.querySelector(".containerItem");
-  item.parentNode.removeChild(event.target.parentNode);
-
-  localStorage.removeItem('newTaskToDo', item)
-  /*alert("Atividade excluída com sucesso!");*/
-  console.log("Atividade excluída");
 }
 
 
