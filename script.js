@@ -31,7 +31,7 @@ function localStorageLoadTask() {
 }
 localStorageLoadTask();
 
-function addNewTasks(itemTask, status, indice) {
+function addNewTasks(itemTask, status) {
   let itemAdd = document.createElement('div')
   itemAdd.classList.add('containerItem')
   
@@ -55,6 +55,7 @@ function addNewTasks(itemTask, status, indice) {
             console.log("Tentativa de inserir campo em branco");
           }
 }
+
 
 function removeItens(event) {
   let item = document.querySelector(".containerItem");

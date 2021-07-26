@@ -39,7 +39,7 @@ form #inputTask {
     border-radius: 14px;
 }
   
-form .bttAdd {
+.bttAdd {
     background: #3e52c0;
     color: #fff;
     height: 40px;
@@ -50,11 +50,12 @@ form .bttAdd {
     text-align: center;
 }
   
-main .newTasks {
+.newTasks {
     margin: 20px auto 10px auto;
+    cursor: pointer;
 }
   
-main .newTasks div {
+.newTasks div {
     background: #fff;
     display: flex;
     justify-content: space-between;
@@ -63,21 +64,17 @@ main .newTasks div {
     border-radius: 14px;
 }
   
-main .newTasks div input[type='checkbox']:checked +ol {
+.newTasks div input[type='checkbox']:checked +ol {
     text-decoration: line-through;
 }
   
-main .newTasks div ol {
+.newTasks div ol {
     max-width: 120px;
     text-align: center;
 }
   
-main .newTasks {
-    cursor: pointer;
-    height: 20px;
-}
   
-main .newTasks .removeItem {
+.newTasks .removeItem {
     background-color: #bb1414;
     color: #fff;
     height: 25px;
